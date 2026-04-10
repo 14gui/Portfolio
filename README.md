@@ -26,5 +26,12 @@ Para evitar a inserção manual e morosa de dados no backoffice, foram desenvolv
 * **Importação de TFCs (`importar_tfcs.py`):** O script processa um ficheiro JSON local com os dados dos Trabalhos Finais de Curso e insere-os diretamente na tabela `TFC` da base de dados. Foi implementada uma lógica de validação onde os TFCs com nota igual ou superior a 18 recebem a flag de destaque automaticamente.
 * **Integração com a API da Lusófona (`importar_ucs.py`):** Em vez de gerar ficheiros de texto intermédios, este script faz pedidos HTTP diretamente à API pública da universidade. O script recolhe o plano de estudos do curso de Engenharia Informática, processa a resposta em formato JSON e regista as UCs na base de dados, estabelecendo logo a relação com a licenciatura respetiva.
 
+
+## 🔑 Credenciais de Acesso (Admin)
+
+Para avaliar o painel de administração (`/admin`), pode utilizar as seguintes credenciais de superuser:
+* **Username:** `Admin`
+* **Password:** `chinelo14`
+
 ---
 **Nota:** Projeto desenvolvido no âmbito da disciplina de Web.
