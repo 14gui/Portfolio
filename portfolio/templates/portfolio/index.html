@@ -1,0 +1,33 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="display-4 fw-bold mb-4">Bem vindo ao meu Portfólio</h1>
+    
+
+    <div class="row align-items-center bg-white p-5 rounded shadow-sm border-0">
+        
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+            <img src="{% static 'portfolio/images/eu.jpg' %}" alt="Fotografia de Perfil" class="img-fluid rounded-circle shadow" style="width: 250px; height: 250px; object-fit: cover; border: 4px solid #212529;">
+        </div>
+
+        <div class="col-md-8">
+            <h2 class="fw-bold mb-3">Sobre Mim</h2>
+            <p class="text-secondary fs-5">Olá, sou o Guilherme Duarte, tenho 22 anos e estou a tirar a licenciatura em Informática de Gestão. Antes disso concluí um curso profissional de Multimédia, onde desenvolvi bases em design e conteúdos digitais. Tenho interesse por tecnologia, programação e desenvolvimento de soluções digitais, procurando sempre aprender e evoluir na área da informática.  </p>
+
+            <div class="mt-4">
+                <a href="https://www.linkedin.com/in/14guilhermeduarte/" target="_blank" class="btn btn-primary btn-lg me-2 text-white border-0" style="background-color: #0e76a8;">
+                    <i class="fa-brands fa-linkedin me-2"></i>LinkedIn
+                </a>
+                <a href="https://github.com/14gui" target="_blank" class="btn btn-dark btn-lg me-2">
+                    <i class="fa-brands fa-github me-2"></i>GitHub
+                </a>
+                <a href="{% static 'portfolio/docs/cv.pdf' %}" target="_blank" class="btn btn-outline-danger btn-lg mt-2 mt-md-0">
+                    <i class="fa-solid fa-file-pdf me-2"></i>Descarregar CV
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

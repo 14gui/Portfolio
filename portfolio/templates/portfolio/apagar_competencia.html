@@ -1,0 +1,14 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h2 class="fw-bold text-danger mb-4">Aviso de Destruição</h2>
+    <p class="lead">Tens a certeza absoluta que queres apagar a competência <strong>{{ competencia.nome }}</strong> da face da terra?</p>
+    
+    <form method="POST" class="mt-4">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger fw-bold">Sim Apagar Sem Piedade</button>
+        <a href="{% url 'competencias' %}" class="btn btn-secondary fw-bold ms-2">Mudei de Ideias</a>
+    </form>
+</div>
+{% endblock %}

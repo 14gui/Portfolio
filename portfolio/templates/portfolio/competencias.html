@@ -1,0 +1,82 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4 border-bottom pb-2">O Meu Arsenal Técnico</h1>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="mb-0 text-secondary"><i class="fa-solid fa-gears me-2"></i>Competências</h3>
+                <a href="{% url 'nova_competencia' %}" class="btn btn-sm btn-dark fw-bold shadow-sm">+ Nova Competência</a>
+            </div>
+            
+            {% for comp in competencias %}
+            <div class="card mb-3 shadow-sm border-0 border-start border-primary border-4">
+                <div class="card-body">
+                    <h5 class="fw-bold mb-1">{{ comp.nome }}</h5>
+                    <span class="badge bg-dark">{{ comp.categoria }}</span>
+                    <span class="badge bg-primary">{{ comp.nivel }}</span>
+                    
+                    <p class="small text-muted mt-2 mb-0">Demonstrada nos projetos: 
+                        {% for projeto in comp.projetos.all %}
+                            <span class="text-dark fw-bold">{{ projeto.titulo }}{% if not forloop.last %}, {% endif %}</span>
+                        {% endfor %}
+                    </p>
+                </div>
+                
+                <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                    <div class="d-flex gap-2">
+                        <a href="{% url 'editar_competencia' comp.id %}" class="btn btn-sm btn-outline-primary w-50">
+                            <i class="fa-solid fa-pen-to-square me-1"></i>Editar
+                        </a>
+                        <a href="{% url 'apagar_competencia' comp.id %}" class="btn btn-sm btn-outline-danger w-50">
+                            <i class="fa-solid fa-trash me-1"></i>Apagar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="alert alert-info shadow-sm border-0">Ainda não tens competências. Clica no botão acima e carrega a arma!</div>
+            {% endfor %}
+        </div>
+
+        <div class="col-md-6">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="mb-0 text-secondary"><i class="fa-solid fa-code me-2"></i>Tecnologias</h3>
+                <a href="{% url 'nova_tecnologia' %}" class="btn btn-sm btn-dark fw-bold shadow-sm">+ Nova Tecnologia</a>
+            </div>
+            
+            <div class="row">
+                {% for tec in tecnologias %}
+                <div class="col-6 mb-3">
+                    <div class="card h-100 shadow-sm border-0 text-center p-3 border-start border-success border-4 d-flex flex-column">
+                        {% if tec.logo %}
+                            <img src="{{ tec.logo.url }}" class="mx-auto mb-2" style="max-height: 50px;">
+                        {% endif %}
+                        <h6 class="fw-bold mb-0">{{ tec.nome }}</h6>
+                        <div class="text-warning small mb-2">
+                            Interesse: {{ tec.nivel_interesse }}/5
+                        </div>
+                        <a href="{{ tec.link_oficial }}" target="_blank" class="btn btn-sm btn-outline-dark mb-3">Site Oficial</a>
+                        
+                        <div class="d-flex gap-2 border-top pt-2 mt-auto">
+                            <a href="{% url 'editar_tecnologia' tec.id %}" class="btn btn-sm btn-outline-primary w-50">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                            <a href="{% url 'apagar_tecnologia' tec.id %}" class="btn btn-sm btn-outline-danger w-50">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12">
+                    <div class="alert alert-warning shadow-sm border-0">Ainda não registaste tecnologias no site.</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

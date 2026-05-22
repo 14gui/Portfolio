@@ -1,0 +1,26 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<h2>Unidades Curriculares</h2>
+<div class="row mt-4">
+    {% for uc in ucs %}
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ uc.nome }}</h5>
+                <p class="card-text">
+                    <strong>{{ uc.ano }}º Ano | {{ uc.semestre }}º Semestre</strong><br>
+                    Créditos: {{ uc.ects }} ECTS
+                </p>
+                <h6>Docentes:</h6>
+                <ul>
+                    {% for docente in uc.docentes.all %}
+                    <li><a href="{{ docente.link_lusofona }}" target="_blank">{{ docente.nome }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

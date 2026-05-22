@@ -1,0 +1,11 @@
+{% extends 'portfolio/layout.html' %}
+{% block content %}
+<div class="container mt-5 text-center">
+    <div class="alert alert-danger shadow-sm d-inline-block p-4 border-0">
+        <h3 class="fw-bold"><i class="fa-solid fa-triangle-exclamation me-2"></i>Acesso Recusado</h3>
+        <p class="mb-0">Esse link mágico já expirou ou a chave de encriptação foi violada.</p>
+        <hr>
+        <a href="{% url 'pedir_magic_link' %}" class="btn btn-danger btn-sm fw-bold">Pedir Novo Link</a>
+    </div>
+</div>
+{% endblock %}

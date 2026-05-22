@@ -1,0 +1,22 @@
+{% extends 'portfolio/layout.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-sm border-0 p-4 border-top border-primary border-4">
+                <h2 class="text-center fw-bold mb-4">Login sem Password</h2>
+                <p class="text-muted text-center mb-4">Insere o teu email e recebe o link de acesso direto ao quartel.</p>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control form-control-lg" placeholder="teu@email.com" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 fw-bold shadow-sm">
+                        <i class="fa-solid fa-paper-plane me-2"></i>Enviar Míssil
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

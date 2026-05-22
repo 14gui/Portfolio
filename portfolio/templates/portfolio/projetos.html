@@ -1,0 +1,51 @@
+{% extends 'portfolio/layout.html' %}
+{% load markdown_filter %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+        <h1 class="mb-0">Projetos Realizados</h1>
+        
+        {% if is_gestor %}
+        <a href="{% url 'novo_projeto' %}" class="btn btn-dark fw-bold shadow-sm">+ Novo Projeto</a>
+        {% endif %}
+    </div>
+
+    <div class="row">
+        {% for projeto in projetos %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold text-primary">{{ projeto.titulo }}</h5>
+                    <div class="card-text text-muted mt-3">
+                        {{ projeto.descricao|markdown|safe }}
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-0 pb-3">
+    
+                {% if is_gestor %}
+                <div class="d-flex gap-2 mb-2">
+                    <a href="{% url 'editar_projeto' projeto.id %}" class="btn btn-sm btn-outline-primary w-50">
+                        <i class="fa-solid fa-pen-to-square me-1"></i>Editar
+                    </a>
+                    <a href="{% url 'apagar_projeto' projeto.id %}" class="btn btn-sm btn-outline-danger w-50">
+                        <i class="fa-solid fa-trash me-1"></i>Apagar
+                    </a>
+                </div>
+                {% endif %}
+
+                <a href="{{ projeto.github_link }}" class="btn btn-sm btn-dark w-100" target="_blank">
+                    <i class="fa-brands fa-github me-1"></i>GitHub
+                </a>
+
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info shadow-sm border-0">Ainda não tens projetos? Abre o menu e cria o teu primeiro império.</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

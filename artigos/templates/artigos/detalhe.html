@@ -1,0 +1,95 @@
+{% extends 'portfolio/layout.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <!-- Artigo -->
+            <div class="card border-0 shadow-sm mb-4">
+                {% if artigo.fotografia %}
+                    <img src="{{ artigo.fotografia.url }}" class="card-img-top" style="max-height:350px; object-fit:cover;" alt="{{ artigo.titulo }}">
+                {% endif %}
+                <div class="card-body">
+                    <h2 class="fw-bold">{{ artigo.titulo }}</h2>
+                    <p class="text-muted small">
+                        <i class="fa-solid fa-user me-1"></i>{{ artigo.autor.username }}
+                        &nbsp;·&nbsp;
+                        <i class="fa-solid fa-calendar me-1"></i>{{ artigo.data_criacao|date:"d M Y" }}
+                    </p>
+                    <hr>
+                    <p style="white-space: pre-line;">{{ artigo.texto }}</p>
+                    {% if artigo.link_externo %}
+                        <a href="{{ artigo.link_externo }}" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
+                            <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>Link Externo
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Botões de ação (editar/apagar só para o autor) -->
+            {% if user == artigo.autor %}
+            <div class="d-flex gap-2 mb-4">
+                <a href="{% url 'editar_artigo' artigo.id %}" class="btn btn-sm btn-outline-secondary">
+                    <i class="fa-solid fa-pen me-1"></i>Editar
+                </a>
+                <form method="POST" action="{% url 'apagar_artigo' artigo.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-sm btn-outline-danger"
+                        onclick="return confirm('Tens a certeza que queres apagar este artigo?')">
+                        <i class="fa-solid fa-trash me-1"></i>Apagar
+                    </button>
+                </form>
+            </div>
+            {% endif %}
+
+            <!-- Like -->
+            <div class="mb-4">
+                <a href="{% url 'dar_like' artigo.id %}" class="btn {% if ja_deu_like %}btn-danger{% else %}btn-outline-danger{% endif %}">
+                    <i class="fa-solid fa-heart me-1"></i>
+                    {% if ja_deu_like %}Gostei{% else %}Gostar{% endif %}
+                    &nbsp;({{ artigo.total_likes }})
+                </a>
+            </div>
+
+            <!-- Comentários -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fa-solid fa-comments me-2"></i>Comentários ({{ comentarios.count }})
+                    </h5>
+
+                    {% for comentario in comentarios %}
+                    <div class="border-bottom pb-3 mb-3">
+                        <strong>{{ comentario.autor.username }}</strong>
+                        <span class="text-muted small ms-2">{{ comentario.data_criacao|date:"d M Y H:i" }}</span>
+                        <p class="mb-0 mt-1">{{ comentario.texto }}</p>
+                    </div>
+                    {% empty %}
+                        <p class="text-muted">Ainda não há comentários. Sê o primeiro!</p>
+                    {% endfor %}
+
+                    <!-- Formulário de comentário (só para autenticados) -->
+                    {% if user.is_authenticated %}
+                    <form method="POST" action="{% url 'adicionar_comentario' artigo.id %}" class="mt-3">
+                        {% csrf_token %}
+                        {{ form_comentario }}
+                        <button type="submit" class="btn btn-dark btn-sm mt-2 fw-bold">
+                            <i class="fa-solid fa-paper-plane me-1"></i>Comentar
+                        </button>
+                    </form>
+                    {% else %}
+                    <p class="text-muted small mt-3">
+                        <a href="{% url 'login' %}">Faz login</a> para comentar.
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <a href="{% url 'lista_artigos' %}" class="btn btn-outline-secondary btn-sm">
+                <i class="fa-solid fa-arrow-left me-1"></i>Voltar aos Artigos
+            </a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

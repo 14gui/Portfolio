@@ -1,0 +1,151 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% load markdownify %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4 border-bottom pb-2 fw-bold">Sobre Esta Aplicação</h1>
+    
+    <div class="row mb-5">
+        <div class="col-md-8">
+            <h3 class="text-secondary mb-3"><i class="fa-solid fa-layer-group me-2"></i>A Arquitetura MVT</h3>
+            <p>Este website foi desenvolvido sobre a framework <strong>Django</strong> seguindo o padrão de desenho <strong>MVT (Model View Template)</strong>:</p>
+            
+            <div class="card p-3 mb-4 bg-light border-0 shadow-sm">
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent"><strong>Model:</strong> Define a estrutura de dados (as tabelas e relações no SQLite que gerem as tuas UCs e Projetos).</li>
+                    <li class="list-group-item bg-transparent"><strong>View:</strong> Processa a lógica de negócio no servidor tratando do carregamento das páginas e dos formulários CRUD.</li>
+                    <li class="list-group-item bg-transparent"><strong>Template:</strong> Constrói a interface final em HTML utilizando tags dinâmicas do Django para injetar os dados da base de dados.</li>
+                </ul>
+            </div>
+
+            <h3 class="text-secondary mb-3"><i class="fa-solid fa-code-branch me-2"></i>Tecnologias Core</h3>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+                <span class="badge bg-dark px-3 py-2">Python 3</span>
+                <span class="badge bg-dark px-3 py-2">Django Framework</span>
+                <span class="badge bg-dark px-3 py-2">SQLite3</span>
+                <span class="badge bg-dark px-3 py-2">Bootstrap 5</span>
+                <span class="badge bg-dark px-3 py-2">Markdown Custom Filter</span>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm p-4 text-center bg-light">
+                <h4 class="fw-bold mb-1">Guilherme Duarte</h4>
+                <p class="text-muted small mb-3">Estudante de Informática de Gestão</p>
+                <hr>
+                <p class="text-secondary small text-start">
+                    Unindo a vertente visual do percurso técnico em <strong>Multimédia</strong> com a lógica estruturada de programação desenvolvida na <strong>Universidade Lusófona</strong> esta aplicação serve como portfólio dinâmico e agregador de competências académicas e práticas.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0 p-3 bg-light">
+                <h5 class="fw-bold mb-3"><i class="fa-brands fa-youtube text-danger me-2"></i>Tutorial: Novo Projeto</h5>
+                <div class="ratio ratio-16x9 bg-dark text-white d-flex align-items-center justify-content-center rounded">
+                    <p class="mb-0 text-muted"><em>[ Iframe do Vídeo do YouTube entra aqui ]</em></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0 p-3 bg-light d-flex flex-column justify-content-center align-items-center text-center">
+                <h5 class="fw-bold mb-3"><i class="fa-brands fa-github me-2"></i>Repositório Oficial</h5>
+                <p class="text-muted mb-4">Consulta o código fonte desta aplicação os commits e toda a evolução do projeto no GitHub.</p>
+                <a href="#" target="_blank" class="btn btn-dark fw-bold w-75 shadow-sm">
+                    Ir para o GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-secondary border-bottom pb-2 mb-4"><i class="fa-solid fa-sitemap me-2"></i>Arquitetura e Modelação</h3>
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <img src="{% static 'portfolio/images/makingof/mvt.jpg' %}" class="card-img-top" alt="MVT">
+                <div class="card-body text-center p-2">
+                    <p class="fw-bold mb-0">Motor MVT</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <img src="{% static 'portfolio/images/makingof/diagrama_er.jpg' %}" class="card-img-top" alt="Diagrama ER">
+                <div class="card-body text-center p-2">
+                    <p class="fw-bold mb-0">Diagrama Entidade Relacionamento</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <img src="{% static 'portfolio/images/makingof/arvore_navegacao.jpg' %}" class="card-img-top" alt="Mapa de Navegação">
+                <div class="card-body text-center p-2">
+                    <p class="fw-bold mb-0">Mapa de Navegação</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-secondary border-bottom pb-2 mb-4"><i class="fa-solid fa-pen-ruler me-2"></i>Wireframes (Rascunhos Visuais)</h3>
+    <div class="row g-3 mb-5">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <img src="{% static 'portfolio/images/makingof/inicio.jpg' %}" class="card-img-top" alt="Início">
+                <div class="card-footer text-center bg-white border-0 py-1"><small class="text-muted fw-bold">Início</small></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <img src="{% static 'portfolio/images/makingof/academico.jpg' %}" class="card-img-top" alt="Académico">
+                <div class="card-footer text-center bg-white border-0 py-1"><small class="text-muted fw-bold">Académico</small></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <img src="{% static 'portfolio/images/makingof/projetos.jpg' %}" class="card-img-top" alt="Projetos">
+                <div class="card-footer text-center bg-white border-0 py-1"><small class="text-muted fw-bold">Projetos</small></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <img src="{% static 'portfolio/images/makingof/competencias.jpg' %}" class="card-img-top" alt="Competências">
+                <div class="card-footer text-center bg-white border-0 py-1"><small class="text-muted fw-bold">Competências</small></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <img src="{% static 'portfolio/images/makingof/sobre.jpg' %}" class="card-img-top" alt="Sobre">
+                <div class="card-footer text-center bg-white border-0 py-1"><small class="text-muted fw-bold">Sobre a Aplicação</small></div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-secondary border-bottom pb-2 mb-4"><i class="fa-solid fa-book-journal-whills me-2"></i>Making Of / Diário de Bordo</h3>
+  <div class="card bg-light border-0 shadow-sm p-4 mb-5">
+{% filter markdownify %}
+### 📖 Diário de Bordo e Evolução do Projeto
+
+O desenvolvimento desta aplicação foi um processo de aprendizagem contínua, focado na aplicação prática dos conceitos de engenharia de software e da framework Django.
+
+**📌 Registo de Commits Principais (GitHub)**
+
+* `init`: Configuração inicial do projeto e criação da aplicação base.
+* `feat`: Modelação da base de dados e estruturação da arquitetura MVT.
+* `fix`: Correção de erros de navegação e reestruturação das rotas (URLs).
+* `feat`: Implementação das operações CRUD completas para Projetos, Competências e Tecnologias.
+* `docs`: Integração da documentação técnica, wireframes e configuração do motor Markdown.
+
+**⚡ Dificuldades e Reflexões**
+
+O principal desafio durante o desenvolvimento foi garantir a correta comunicação entre as rotas (`urls.py`), a lógica do servidor (`views.py`) e a interface gráfica (`templates`). O Django exige um rigor elevado na passagem de variáveis e na validação de formulários, especialmente no tratamento de upload de imagens.
+
+Ultrapassar os erros de execução, como as falhas de redirecionamento, foi essencial para compreender o funcionamento interno da framework. O resultado final é uma plataforma estruturalmente sólida, que cumpre os requisitos propostos e serve como base fiável para desenvolvimentos futuros.
+{% endfilter %}
+</div>
+    
+
+</div>
+{% endblock %}

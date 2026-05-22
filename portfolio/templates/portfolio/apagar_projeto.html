@@ -1,0 +1,22 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow border-danger p-4 text-center">
+                <h2 class="fw-bold text-danger">Confirmar Eliminação</h2>
+                <p class="lead mt-3">Tens a certeza que queres apagar o projeto: <br><strong>{{ projeto.titulo }}</strong>?</p>
+                
+                <form method="POST" class="mt-4">
+                    {% csrf_token %}
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <a href="{% url 'projetos' %}" class="btn btn-outline-secondary px-4">Cancelar</a>
+                        <button type="submit" class="btn btn-danger px-4 fw-bold">Sim, Apagar Permanentemente</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

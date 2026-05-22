@@ -1,0 +1,592 @@
+[
+{
+    "model": "portfolio.licenciatura",
+    "pk": 5,
+    "fields": {
+        "nome": "Informática de Gestão",
+        "descricao": "Uma licenciatura que colmata a necessidade de aproximar as áreas de negócio com as Tecnologias e Sistemas de Informação.",
+        "ano_inicio": 2023
+    }
+},
+{
+    "model": "portfolio.docente",
+    "pk": 18,
+    "fields": {
+        "nome": "Por definir",
+        "link_lusofona": "https://www.ulusofona.pt"
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 27,
+    "fields": {
+        "nome": "Contabilidade",
+        "ano": 1,
+        "semestre": 1,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 28,
+    "fields": {
+        "nome": "Fundamentos de Programação",
+        "ano": 1,
+        "semestre": 1,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 29,
+    "fields": {
+        "nome": "Fundamentos de Sistemas de Informação",
+        "ano": 1,
+        "semestre": 1,
+        "ects": 7,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 30,
+    "fields": {
+        "nome": "Matemática I",
+        "ano": 1,
+        "semestre": 1,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 31,
+    "fields": {
+        "nome": "Teoria e Prática de Marketing",
+        "ano": 1,
+        "semestre": 1,
+        "ects": 5,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 32,
+    "fields": {
+        "nome": "Algoritmia e Estruturas de Dados",
+        "ano": 1,
+        "semestre": 2,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 33,
+    "fields": {
+        "nome": "Cálculo Financeiro",
+        "ano": 1,
+        "semestre": 2,
+        "ects": 5,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 34,
+    "fields": {
+        "nome": "Competências Comportamentais",
+        "ano": 1,
+        "semestre": 2,
+        "ects": 4,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 35,
+    "fields": {
+        "nome": "Linguagens de Programação I",
+        "ano": 1,
+        "semestre": 2,
+        "ects": 5,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 36,
+    "fields": {
+        "nome": "Matemática II",
+        "ano": 1,
+        "semestre": 2,
+        "ects": 5,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 37,
+    "fields": {
+        "nome": "Métricas Empresariais",
+        "ano": 1,
+        "semestre": 2,
+        "ects": 5,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 38,
+    "fields": {
+        "nome": "Bases de Dados",
+        "ano": 2,
+        "semestre": 1,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 39,
+    "fields": {
+        "nome": "Direito Informático",
+        "ano": 2,
+        "semestre": 1,
+        "ects": 3,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 40,
+    "fields": {
+        "nome": "Instrumentos de Gestão",
+        "ano": 2,
+        "semestre": 1,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 41,
+    "fields": {
+        "nome": "Motivação e Liderança",
+        "ano": 2,
+        "semestre": 1,
+        "ects": 3,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 42,
+    "fields": {
+        "nome": "Programação Low-Code e No-Code",
+        "ano": 2,
+        "semestre": 1,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 43,
+    "fields": {
+        "nome": "Sistemas Operativos",
+        "ano": 2,
+        "semestre": 1,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 44,
+    "fields": {
+        "nome": "Engenharia de Requisitos e Testes",
+        "ano": 2,
+        "semestre": 2,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 45,
+    "fields": {
+        "nome": "Gestão Financeira",
+        "ano": 2,
+        "semestre": 2,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 46,
+    "fields": {
+        "nome": "Programação Web",
+        "ano": 2,
+        "semestre": 2,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 47,
+    "fields": {
+        "nome": "Redes de Computadores",
+        "ano": 2,
+        "semestre": 2,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 48,
+    "fields": {
+        "nome": "Sistemas de Suporte à Decisão",
+        "ano": 2,
+        "semestre": 2,
+        "ects": 6,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 49,
+    "fields": {
+        "nome": "Data Mining",
+        "ano": 3,
+        "semestre": 1,
+        "ects": 5,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 50,
+    "fields": {
+        "nome": "Engenharia de Software",
+        "ano": 3,
+        "semestre": 1,
+        "ects": 5,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 51,
+    "fields": {
+        "nome": "Interação Humano-Máquina",
+        "ano": 3,
+        "semestre": 1,
+        "ects": 5,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 52,
+    "fields": {
+        "nome": "Sistemas Móveis Empresariais",
+        "ano": 3,
+        "semestre": 1,
+        "ects": 5,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 53,
+    "fields": {
+        "nome": "Auditoria de Sistemas de Informação",
+        "ano": 3,
+        "semestre": 2,
+        "ects": 4,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 54,
+    "fields": {
+        "nome": "Controlo de Gestão",
+        "ano": 3,
+        "semestre": 2,
+        "ects": 3,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 55,
+    "fields": {
+        "nome": "Gestão de Projetos",
+        "ano": 3,
+        "semestre": 2,
+        "ects": 3,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 56,
+    "fields": {
+        "nome": "Inteligência Artificial",
+        "ano": 3,
+        "semestre": 2,
+        "ects": 5,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 57,
+    "fields": {
+        "nome": "Sistemas de Informação na Nuvem",
+        "ano": 3,
+        "semestre": 2,
+        "ects": 5,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.uc",
+    "pk": 58,
+    "fields": {
+        "nome": "Trabalho Final de Curso",
+        "ano": 3,
+        "semestre": 1,
+        "ects": 20,
+        "imagem": "",
+        "licenciatura": 5,
+        "docentes": [
+            18
+        ]
+    }
+},
+{
+    "model": "portfolio.projeto",
+    "pk": 6,
+    "fields": {
+        "titulo": "Batalha Naval - Kotlin",
+        "descricao": "Proposta de jogo da batalha naval em Kotlin",
+        "conceitos_aplicados": "Kotlin",
+        "imagem": "",
+        "video_demo": "https://www.youtube.com/watch?v=4PDzqHU3F18",
+        "github_link": "https://github.com/14gui/Batalha-Naval",
+        "uc": 28
+    }
+},
+{
+    "model": "portfolio.tecnologia",
+    "pk": 1,
+    "fields": {
+        "nome": "Python",
+        "logo": "",
+        "link_oficial": "https://www.python.org/",
+        "nivel_interesse": 5,
+        "descricao_destaque": "Python é uma linguagem de programação de alto nível",
+        "projetos": []
+    }
+},
+{
+    "model": "portfolio.tecnologia",
+    "pk": 2,
+    "fields": {
+        "nome": "Java",
+        "logo": "",
+        "link_oficial": "https://www.java.com/",
+        "nivel_interesse": 5,
+        "descricao_destaque": "Java é uma linguagem de programação orientada a objetos",
+        "projetos": []
+    }
+},
+{
+    "model": "portfolio.tecnologia",
+    "pk": 3,
+    "fields": {
+        "nome": "Kotlin",
+        "logo": "",
+        "link_oficial": "https://kotlinlang.org/",
+        "nivel_interesse": 5,
+        "descricao_destaque": "Kotlin é uma linguagem de programação moderna e estaticamente tipada desenvolvida pela JetBrains",
+        "projetos": []
+    }
+},
+{
+    "model": "portfolio.competencia",
+    "pk": 1,
+    "fields": {
+        "nome": "Python",
+        "nivel": "5",
+        "categoria": "Hard Skill",
+        "projetos": []
+    }
+},
+{
+    "model": "portfolio.competencia",
+    "pk": 2,
+    "fields": {
+        "nome": "Kotlin",
+        "nivel": "5",
+        "categoria": "Hard Skill",
+        "projetos": [
+            6
+        ]
+    }
+},
+{
+    "model": "portfolio.competencia",
+    "pk": 3,
+    "fields": {
+        "nome": "Java",
+        "nivel": "5",
+        "categoria": "Hard Skill",
+        "projetos": []
+    }
+},
+{
+    "model": "portfolio.tfc",
+    "pk": 4,
+    "fields": {
+        "titulo": "Plataforma de Gestão de Portfólios Académicos com Django",
+        "autores": "Guilherme Duarte",
+        "resumo": "Desenvolvimento de uma aplicação web robusta utilizando a arquitetura MVT do Django para a centralização de competências, projetos práticos e plano curricular.",
+        "link_repositorio": "https://github.com/14gui",
+        "destaque_interesse": true,
+        "licenciatura": 5
+    }
+}
+]
